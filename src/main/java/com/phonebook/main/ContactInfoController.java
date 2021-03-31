@@ -1,4 +1,4 @@
-package com.phonebook.controller;
+package com.phonebook.main;
 
 import java.util.List;
 
@@ -7,9 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.phonebook.entity.Contact;
-import com.phonebook.service.ContactService;
-
 @Controller
 public class ContactInfoController {
 	private ContactService service;
@@ -17,9 +14,8 @@ public class ContactInfoController {
 	public ContactInfoController(ContactService service) {
 		this.service = service;
 	}
-	@GetMapping("/load-form")
+	@GetMapping(value="/load-form")
 	public String loadForm(Model model) {
-		System.out.println("1");
 		Contact cobj = new Contact();
 		model.addAttribute("contact", cobj);		
 		return "contact";

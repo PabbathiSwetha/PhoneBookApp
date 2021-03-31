@@ -1,4 +1,4 @@
-package com.phonebook.entity;
+package com.phonebook.main;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

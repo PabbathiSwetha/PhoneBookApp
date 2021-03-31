@@ -1,9 +1,7 @@
-package com.phonebook.service;
+package com.phonebook.main;
 
 import java.util.List;
 import java.util.Optional;
-
-import com.phonebook.entity.Contact;
 
 public interface ContactService {
 	

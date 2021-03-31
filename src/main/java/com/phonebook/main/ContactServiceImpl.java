@@ -1,4 +1,4 @@
-package com.phonebook.service;
+package com.phonebook.main;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,14 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.phonebook.entity.Contact;
-import com.phonebook.repository.ContactRepo;
-
 @Service
 public class ContactServiceImpl implements ContactService{
 	   private ContactRepo repository;
 	
-	@Autowired
 	public ContactServiceImpl(ContactRepo repository) {
 		this.repository = repository;
 	}
@@ -22,6 +18,7 @@ public class ContactServiceImpl implements ContactService{
 	public boolean saveOrUpdateContact(Contact contact) {
 		Contact savedObj = repository.save(contact);				
 		return savedObj.getContactId()!= null;
+		
 	}
 
 	@Override
